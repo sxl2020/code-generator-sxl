@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sac.robInspectionPoint.mapper.RobInspectionDeviceMapper">
+
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.sac.robInspectionPoint.entity.RobInspectionDevice">
+        <id column="did" property="did"/>
+        <result column="station_code" property="stationCode"/>
+        <result column="patroldevice_name" property="patroldeviceName"/>
+        <result column="patroldevice_code" property="patroldeviceCode"/>
+        <result column="device_model" property="deviceModel"/>
+        <result column="manufacturer" property="manufacturer"/>
+        <result column="madein" property="madein"/>
+        <result column="use_unit" property="useUnit"/>
+        <result column="device_source" property="deviceSource"/>
+        <result column="production_date" property="productionDate"/>
+        <result column="production_code" property="productionCode"/>
+        <result column="istransport" property="istransport"/>
+        <result column="use_mode" property="useMode"/>
+        <result column="video_mode" property="videoMode"/>
+        <result column="place" property="place"/>
+        <result column="type" property="type"/>
+        <result column="device_category" property="deviceCategory"/>
+        <result column="map_path" property="mapPath"/>
+        <result column="map_point" property="mapPoint"/>
+        <result column="patroldevice_info" property="patroldeviceInfo"/>
+        <result column="robots_code" property="robotsCode"/>
+        <result column="ftp_local_port" property="ftpLocalPort"/>
+        <result column="ftp_romote_ip" property="ftpRomoteIp"/>
+        <result column="ftp_romote_port" property="ftpRomotePort"/>
+        <result column="ftp_romote_user" property="ftpRomoteUser"/>
+        <result column="ftp_romote_pass" property="ftpRomotePass"/>
+        <result column="is_online" property="isOnline"/>
+        <result column="is_run" property="isRun"/>
+        <result column="position_x" property="positionX"/>
+        <result column="position_y" property="positionY"/>
+        <result column="region" property="region"/>
+        <result column="cabinet" property="cabinet"/>
+        <result column="hw_rev" property="hwRev"/>
+        <result column="sw_rev" property="swRev"/>
+        <result column="sw_rev_crc" property="swRevCrc"/>
+        <result column="ip_addr" property="ipAddr"/>
+        <result column="mac_addr" property="macAddr"/>
+        <result column="server_host_code" property="serverHostCode"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        did, station_code, patroldevice_name, patroldevice_code, device_model, manufacturer, madein, use_unit, device_source, production_date, production_code, istransport, use_mode, video_mode, place, type, device_category, map_path, map_point, patroldevice_info, robots_code, ftp_local_port, ftp_romote_ip, ftp_romote_port, ftp_romote_user, ftp_romote_pass, is_online, is_run, position_x, position_y, region, cabinet, hw_rev, sw_rev, sw_rev_crc, ip_addr, mac_addr, server_host_code
+    </sql>
+
+</mapper>

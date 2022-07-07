@@ -1,0 +1,74 @@
+package ${cfg.controllerPackage};
+
+import ${package.Entity}.${entity};
+import ${package.Service}.${table.serviceName};
+import ${package.Entity}.common.*;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+/**
+ * @Package: ${cfg.controllerPackage}
+ * @Description: <$!{table.comment}前端控制器>
+ * @Author: ${author}
+ * @CreateDate: ${date}
+ * @UpdateUser: ${author}
+ * @UpdateDate: ${date}
+ * @UpdateRemark: <>
+ * @Version: 1.0
+ */
+#set($path=${table.name})
+#set($path=$path.concat("path"))
+@RestController
+@Api(tags = "$!{table.comment}-相关接口")
+@RequestMapping(value = "${cfg.get($path)}", produces = MediaType.APPLICATION_JSON_VALUE)
+public class ${table.controllerName} {
+    @Autowired
+    private ${table.serviceName} i${table.serviceName};
+
+
+    @GetMapping("list")
+    @ApiOperation(value = "$!{table.comment}分页查询")
+    public ResponseMsg<Page<${entity}>> list${table.serviceName}ByPage(QueryReq<${entity}> query) {
+        return i${table.serviceName}.page(query.getPage() == null ? new Page() : query.getPage(), query.initQueryWrapper());
+    }
+
+    @GetMapping("{id}")
+    @ApiOperation(value = "$!{table.comment}获取某一实体")
+    public ResponseMsg<${entity}> get${table.serviceName}Details(@PathVariable Long id) {
+        return i${table.serviceName}.getById(id);
+    }
+
+    @PostMapping
+    @ApiOperation(value = "$!{table.comment}新增数据")
+    public ResponseMsg<Boolean> save${table.serviceName}(@RequestBody ${entity} dto) {
+        return i${table.serviceName}.save(dto);
+    }
+
+    @PostMapping("{id}")
+    @ApiOperation(value = "$!{table.comment}修改数据")
+    public ResponseMsg<Boolean> modify${table.serviceName}(@RequestBody ${entity} dto) {
+        if(i${table.serviceName}.updateById(dto)){
+            return ResponseMsg.ok("操作成功");
+        }else{
+            return ResponseMsg.failed("操作失败");
+        }
+    }
+
+    @PostMapping("batch")
+    @ApiOperation(value = "$!{table.comment}批量删除数据")
+    public boolean batchRemove${table.serviceName}(@RequestParam(value = "ids") List<String> ids) {
+         i${table.serviceName}.removeByIds(ids);
+    }
+
+    @PostMapping("{id}")
+    @ApiOperation(value = "$!{table.comment}删除数据")
+    public boolean remove${table.serviceName}(@PathVariable String id) {
+        return i${table.serviceName}.removeById(id);
+    }
+}

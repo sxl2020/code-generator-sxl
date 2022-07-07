@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sac.robInspectionPoint.mapper.RobRobotAbnormalMapper">
+
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.sac.robInspectionPoint.entity.RobRobotAbnormal">
+        <id column="did" property="did"/>
+        <result column="station_code" property="stationCode"/>
+        <result column="patroldevice_name" property="patroldeviceName"/>
+        <result column="patroldevice_code" property="patroldeviceCode"/>
+        <result column="content" property="content"/>
+        <result column="time" property="time"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        did, station_code, patroldevice_name, patroldevice_code, content, time
+    </sql>
+
+</mapper>

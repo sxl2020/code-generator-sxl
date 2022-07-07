@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sac.robInspectionPoint.mapper.RobInspectionPointMapper">
+
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.sac.robInspectionPoint.entity.RobInspectionPoint">
+        <id column="did" property="did"/>
+        <result column="station_code" property="stationCode"/>
+        <result column="bay_id" property="bayId"/>
+        <result column="bay_name" property="bayName"/>
+        <result column="main_device_id" property="mainDeviceId"/>
+        <result column="main_device_name" property="mainDeviceName"/>
+        <result column="phyAssertID" property="phyAssertID"/>
+        <result column="component_id" property="componentId"/>
+        <result column="component_name" property="componentName"/>
+        <result column="device_id" property="deviceId"/>
+        <result column="device_name" property="deviceName"/>
+        <result column="device_type" property="deviceType"/>
+        <result column="meter_type" property="meterType"/>
+        <result column="appearance_type" property="appearanceType"/>
+        <result column="save_type_list" property="saveTypeList"/>
+        <result column="recognition_type_list" property="recognitionTypeList"/>
+        <result column="phase" property="phase"/>
+        <result column="data_type" property="dataType"/>
+        <result column="video_device_code" property="videoDeviceCode"/>
+        <result column="video_device_pos" property="videoDevicePos"/>
+        <result column="robot_device_code" property="robotDeviceCode"/>
+        <result column="robot_device_pos" property="robotDevicePos"/>
+        <result column="map_path" property="mapPath"/>
+        <result column="map_pos" property="mapPos"/>
+        <result column="lower_value" property="lowerValue"/>
+        <result column="upper_value" property="upperValue"/>
+        <result column="device_info" property="deviceInfo"/>
+        <result column="sound_id" property="soundId"/>
+        <result column="unit" property="unit"/>
+        <result column="normal_value" property="normalValue"/>
+        <result column="identifiy_type" property="identifiyType"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        did, station_code, bay_id, bay_name, main_device_id, main_device_name, phyAssertID, component_id, component_name, device_id, device_name, device_type, meter_type, appearance_type, save_type_list, recognition_type_list, phase, data_type, video_device_code, video_device_pos, robot_device_code, robot_device_pos, map_path, map_pos, lower_value, upper_value, device_info, sound_id, unit, normal_value, identifiy_type
+    </sql>
+
+</mapper>
