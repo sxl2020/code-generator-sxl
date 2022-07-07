@@ -1,10 +1,10 @@
-package com.sac.generatorsac;
+package com.sxl.sxldemo.generatorsxl;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GeneratorSacApplicationTests {
+class GeneratorsxlApplicationTests {
 
     @Test
     void contextLoads() {

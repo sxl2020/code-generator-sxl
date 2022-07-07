@@ -4,7 +4,7 @@
 
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.sac.robInspectionPoint.entity.RobInspectionDevice">
+    <resultMap id="BaseResultMap" type="com.sxl.robInspectionPoint.entity.RobInspectionDevice">
         <id column="did" property="did"/>
         <result column="station_code" property="stationCode"/>
         <result column="patroldevice_name" property="patroldeviceName"/>

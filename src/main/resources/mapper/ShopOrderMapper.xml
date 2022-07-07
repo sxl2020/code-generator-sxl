@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sac.newmodule.mapper.ShopOrderMapper">
+<mapper namespace="com.sac.newmodule3.mapper.ShopOrderMapper">
 
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.sac.newmodule.entity.ShopOrder">
+    <resultMap id="BaseResultMap" type="com.sxl.newmodule3.entity.ShopOrder">
         <id column="id" property="id"/>
         <result column="mount" property="mount"/>
         <result column="status" property="status"/>

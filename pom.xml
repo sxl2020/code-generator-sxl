@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.sac</groupId>
-    <artifactId>generator-sac</artifactId>
+    <artifactId>generator-sxl</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>generator-sac</name>
+    <name>generator-sxl</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -101,7 +101,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.sac.generatorsac.GeneratorSacApplication</mainClass>
+                    <mainClass>com.sxl.sxldemo.generatorsxl.generator.JavaOutput</mainClass>
                 </configuration>
                 <executions>
                     <execution>

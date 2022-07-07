@@ -1,6 +1,6 @@
-package com.sac.common.entity.dto;
+package com.sxl.sxldemo.common.entity.dto;
 /**
- * @author qiancheng-su
+ * @author sxl
  * @description: 后台返回的统一消息格式
  * @date 2022/1/12 15:32
  */

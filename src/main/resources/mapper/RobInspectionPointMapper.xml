@@ -4,7 +4,7 @@
 
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.sac.robInspectionPoint.entity.RobInspectionPoint">
+    <resultMap id="BaseResultMap" type="com.sxl.robInspectionPoint.entity.RobInspectionPoint">
         <id column="did" property="did"/>
         <result column="station_code" property="stationCode"/>
         <result column="bay_id" property="bayId"/>

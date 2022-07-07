@@ -1,16 +1,16 @@
-package com.sac.generatorsac;
+package com.sxl.sxldemo.generatorsxl.config;
 
 /**
  * @Package: com.study.generator
  * @Description: <模版位置配置类,模板引擎默认为：velocity>
- * @Author: qiancheng-su
+ * @Author: sxl
  * @CreateDate: 2020/11/12 18:09
- * @UpdateUser: qiancheng-su
+ * @UpdateUser: sxl
  * @UpdateDate: 2020/11/12 18:09
  * @UpdateRemark: <>
  * @Version: 1.0
  */
-public final class TemplateConstant {
+public final class TemplateConfig {
 
     /**
      * entity输出模板

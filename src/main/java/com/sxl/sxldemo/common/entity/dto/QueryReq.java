@@ -1,4 +1,4 @@
-package com.sac.common.entity.dto;
+package com.sxl.sxldemo.common.entity.dto;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -9,9 +9,9 @@ import lombok.Data;
 /**
  * @Package: com.study.common.entity.bo
  * @Description: <查询实体类>
- * @Author: milla
+ * @Author: sxl
  * @CreateDate: 2020/11/06 14:56
- * @UpdateUser: milla
+ * @UpdateUser: sxl
  * @UpdateDate: 2020/11/06 14:56
  * @UpdateRemark: <>
  * @Version: 1.0

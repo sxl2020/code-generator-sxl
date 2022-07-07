@@ -1,4 +1,4 @@
-package com.sac.generatorsac;
+package com.sxl.sxldemo.generatorsxl.generator;
 
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
@@ -10,8 +10,8 @@ import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.google.common.base.CaseFormat;
-import com.sac.generatorsac.config.DataBaseConfig;
-import com.sac.generatorsac.config.PackageConfig;
+import com.sxl.sxldemo.generatorsxl.config.DataBaseConfig;
+import com.sxl.sxldemo.generatorsxl.config.PackageConfig;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -21,21 +21,20 @@ import java.util.*;
 
 import static com.baomidou.mybatisplus.core.toolkit.StringPool.SLASH;
 import static com.baomidou.mybatisplus.core.toolkit.StringPool.UNDERSCORE;
-import static com.sac.generatorsac.config.DataBaseConfig.*;
-import static com.sac.generatorsac.config.TemplateConfig.*;
+import static com.sxl.sxldemo.generatorsxl.config.TemplateConfig.*;
 
 
 /**
- * @author qiancheng-su
+ * @author sxl
  */
 @Data
 @Slf4j
-public class JavaOutput {
+public class JavaOutput{
     /**
      * 执行自动代码生成程序
      *
      */
-    private static void builder(DataBaseConfig dataBaseConfig, PackageConfig packageConfig) {
+    public static void builder(DataBaseConfig dataBaseConfig, PackageConfig packageConfig) {
         new AutoGenerator().setGlobalConfig(globalConfig(packageConfig.getAuthor()))
                 .setDataSource(dataSourceConfig(dataBaseConfig))
                 .setStrategy(strategyConfig(dataBaseConfig))
@@ -210,7 +209,8 @@ public class JavaOutput {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 try {
-                    String entityAbsPath = getPackageAbsPath(packageConfig.getJavaSrcPath(),packageConfig.getEntityPackage());
+                    String entityAbsPath = getPackageAbsPath(packageConfig.getJavaSrcPath(),
+                            packageConfig.getEntityPackage(),packageConfig.getModelName());
                     return entityAbsPath + tableInfo.getEntityName() + StringPool.DOT_JAVA;
                 }catch (Exception e){
                     log.warn("PackageConfig 部分路径配置为null，请重新配置：{}",packageConfig.toString());
@@ -225,7 +225,8 @@ public class JavaOutput {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 try {
-                    String xmlAbsPath = getPackageAbsPath(packageConfig.getJavaSrcPath(),packageConfig.getXmlPackage());
+                    String xmlAbsPath = getPackageAbsPath(packageConfig.getResourcePath(),
+                            packageConfig.getXmlPackage(),packageConfig.getModelName());
                     return xmlAbsPath + tableInfo.getMapperName() + StringPool.DOT_XML;
                 }catch (Exception e){
                     log.warn("PackageConfig 部分路径配置为null，请重新配置：{}",packageConfig.toString());
@@ -241,7 +242,8 @@ public class JavaOutput {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 try {
-                    String mapperAbsPath = getPackageAbsPath(packageConfig.getJavaSrcPath(),packageConfig.getMapperPackage());
+                    String mapperAbsPath = getPackageAbsPath(packageConfig.getJavaSrcPath(),
+                            packageConfig.getMapperPackage(),packageConfig.getModelName());
                     return mapperAbsPath + tableInfo.getMapperName() + StringPool.DOT_JAVA;
                 }catch (Exception e){
                     log.warn("PackageConfig 部分路径配置为null，请重新配置：{}",packageConfig.toString());
@@ -256,7 +258,8 @@ public class JavaOutput {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 try {
-                    String serviceAbsPath = getPackageAbsPath(packageConfig.getJavaSrcPath(),packageConfig.getServicePackage());
+                    String serviceAbsPath = getPackageAbsPath(packageConfig.getJavaSrcPath(),
+                            packageConfig.getServicePackage(),packageConfig.getModelName());
                     return serviceAbsPath +  tableInfo.getServiceName() + StringPool.DOT_JAVA;
                 }catch (Exception e){
                     log.warn("PackageConfig 部分路径配置为null，请重新配置：{}",packageConfig.toString());
@@ -271,7 +274,8 @@ public class JavaOutput {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 try {
-                    String serviceImplAbsPath = getPackageAbsPath(packageConfig.getJavaSrcPath(),packageConfig.getServicePackage());
+                    String serviceImplAbsPath = getPackageAbsPath(packageConfig.getJavaSrcPath(),
+                            packageConfig.getServicePackage(),packageConfig.getModelName());
                     return serviceImplAbsPath +  tableInfo.getServiceImplName() + StringPool.DOT_JAVA;
                 }catch (Exception e){
                     log.warn("PackageConfig 部分路径配置为null，请重新配置：{}",packageConfig.toString());
@@ -286,7 +290,8 @@ public class JavaOutput {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 try {
-                    String controllerAbsPath = getPackageAbsPath(packageConfig.getJavaSrcPath(),packageConfig.getControllerPackage());
+                    String controllerAbsPath = getPackageAbsPath(packageConfig.getJavaSrcPath(),
+                            packageConfig.getControllerPackage(),packageConfig.getModelName());
                     return controllerAbsPath +  tableInfo.getControllerName() + StringPool.DOT_JAVA;
                 }catch (Exception e){
                     log.warn("PackageConfig 部分路径配置为null，请重新配置：{}",packageConfig.toString());
@@ -299,11 +304,11 @@ public class JavaOutput {
 
     /**
      * @description: 将包路径修改为文件路径格式
-     * @author qiancheng-su
+     * @author sxl
      * @return: {@link String}
      * @date: 2022/7/7 14:36
      */
-    private static String getPackageAbsPath(String rootPath,String packageName) throws Exception {
+    private static String getPackageAbsPath(String rootPath,String packageName,String modelName) throws Exception {
         if(StringUtils.isEmpty(rootPath) || StringUtils.isEmpty(packageName)){
             log.error("PackageConfig 部分路径配置为空，请重新配置");
             throw new Exception("PackageConfig 路径配置为空，请重新配置");
@@ -311,7 +316,12 @@ public class JavaOutput {
         if(!rootPath.endsWith(File.separator)){
             rootPath = rootPath + File.separator;
         }
-        return rootPath+packageName.replace('.',File.separatorChar);
+        if(StringUtils.isEmpty(modelName)){
+            return rootPath+packageName.replace('.',File.separatorChar)+File.separator;
+        }else {
+            return rootPath+packageName.replace('.',File.separatorChar)+File.separator + modelName + File.separator;
+        }
     }
+
 
 }
