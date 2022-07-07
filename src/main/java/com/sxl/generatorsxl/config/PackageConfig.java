@@ -1,4 +1,4 @@
-package com.sxl.sxldemo.generatorsxl.config;
+package com.sxl.generatorsxl.config;
 
 import lombok.Data;
 
@@ -91,7 +91,7 @@ public class PackageConfig {
          * 公共类所在的包: 生成Controller时，需要填写此项
          * 常见的公共类有： Controller中统一的返回格式对象
          */
-        this.commonEntityPackage = "com.sxl.sxlDemo.dto.bean" ;
+        this.commonEntityPackage = "com.sxl.generatorsxl.dto" ;
     }
 
 }

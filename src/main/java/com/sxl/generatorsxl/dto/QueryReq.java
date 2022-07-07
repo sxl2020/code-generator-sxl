@@ -1,4 +1,4 @@
-package com.sxl.sxldemo.common.entity.dto;
+package com.sxl.generatorsxl.dto;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;

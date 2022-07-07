@@ -1,4 +1,4 @@
-package com.sxl.sxldemo.generatorsxl.generator;
+package com.sxl.generatorsxl.generator;
 
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
@@ -10,8 +10,8 @@ import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.google.common.base.CaseFormat;
-import com.sxl.sxldemo.generatorsxl.config.DataBaseConfig;
-import com.sxl.sxldemo.generatorsxl.config.PackageConfig;
+import com.sxl.generatorsxl.config.DataBaseConfig;
+import com.sxl.generatorsxl.config.PackageConfig;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -21,7 +21,7 @@ import java.util.*;
 
 import static com.baomidou.mybatisplus.core.toolkit.StringPool.SLASH;
 import static com.baomidou.mybatisplus.core.toolkit.StringPool.UNDERSCORE;
-import static com.sxl.sxldemo.generatorsxl.config.TemplateConfig.*;
+import static com.sxl.generatorsxl.config.TemplateConfig.*;
 
 
 /**

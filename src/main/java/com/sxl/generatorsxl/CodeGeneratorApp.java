@@ -1,8 +1,8 @@
-package com.sxl.sxldemo.generatorsxl;
+package com.sxl.generatorsxl;
 
-import com.sxl.sxldemo.generatorsxl.config.DataBaseConfig;
-import com.sxl.sxldemo.generatorsxl.config.PackageConfig;
-import com.sxl.sxldemo.generatorsxl.generator.JavaOutput;
+import com.sxl.generatorsxl.config.DataBaseConfig;
+import com.sxl.generatorsxl.config.PackageConfig;
+import com.sxl.generatorsxl.generator.JavaOutput;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**

@@ -1,4 +1,4 @@
-package com.sxl.sxldemo.generatorsxl.config;
+package com.sxl.generatorsxl.config;
 
 /**
  * @Package: com.study.generator

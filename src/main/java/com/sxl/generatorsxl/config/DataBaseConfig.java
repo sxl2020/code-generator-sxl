@@ -1,4 +1,4 @@
-package com.sxl.sxldemo.generatorsxl.config;
+package com.sxl.generatorsxl.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.sxl.sxldemo.common.entity.dto;
+package com.sxl.generatorsxl.dto;
 /**
  * @author sxl
  * @description: 后台返回的统一消息格式

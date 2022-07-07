@@ -101,7 +101,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.sxl.sxldemo.generatorsxl.generator.JavaOutput</mainClass>
+                    <mainClass>com.sxl.generatorsxl.generator.JavaOutput</mainClass>
                 </configuration>
                 <executions>
                     <execution>
